@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <cuda_runtime.h>
-#include <iostream>
 
 __device__ float multiply_row_kernel(unsigned int rowsize,
 unsigned int *Aj, // column indices for row
