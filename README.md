@@ -30,3 +30,46 @@
 
 By following this process, SpMV can be performed efficiently on large matrices using the powerful parallel processing capabilities of GPUs.
 This explanation includes the conceptual understanding as well as the computational flow of the algorithm when implemented with CUDA.
+
+# CSR Matrix-Vector Multiplication using CUDA
+Description
+
+This program performs matrix-vector multiplication using the Compressed Sparse Row (CSR) format for matrices. It is designed to run on NVIDIA GPUs using CUDA. The main functionality of the program is to convert a dense matrix into its CSR representation and then multiply it with a vector using CUDA kernels.
+Features
+
+    Matrix Conversion: Converts a dense matrix into CSR format.
+    Matrix-Vector Multiplication: Performs multiplication of a CSR matrix with a vector using CUDA.
+    CUDA Acceleration: Utilizes the parallel processing power of NVIDIA GPUs for efficient computation.
+
+Requirements
+
+    NVIDIA GPU with CUDA support.
+    CUDA Toolkit (compatible with your GPU and operating system).
+
+Input Format
+
+    The program prompts for the size of the matrix (n).
+    Enter the elements of the matrix row-wise.
+    Enter the elements of the right-hand side (RHS) vector.
+
+Output
+
+    The program outputs the CSR representation of the matrix (Av, Aj, Ap).
+    The result of the matrix-vector multiplication is displayed.
+
+Code Structure
+
+    __device__ float multiply_row_kernel(...): A device function to multiply a row of the CSR matrix with the vector.
+    __global__ void csrmul_kernel(...): A global kernel function for parallel CSR matrix-vector multiplication.
+    void convertToCSR(...): Function to convert a dense matrix to CSR format.
+    int main(...): The main function to handle user input, matrix conversion, and call CUDA kernels.
+
+Known Issues
+
+    No error handling for invalid inputs.
+    Limited to square matrices.
+
+Contributing
+
+Contributions to improve the code or extend its functionality are welcome. Please submit a pull request or open an issue for discussion.
+
